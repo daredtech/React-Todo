@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-const Todo = (props) => {
+const Todo = props => {
 
     const {id, task, completed} = props;
 
@@ -9,9 +8,8 @@ const Todo = (props) => {
         <div className = 'todo-item'
             id = {id}
             completed = {completed}
-            onClick = {() => props.toggleItem({id})}
-        >
-            <p> {task}</p>
+            onClick = {() => props.toggleItem({id})}>
+            <p> {props.item.task}</p>
         </div>
     )
 }
