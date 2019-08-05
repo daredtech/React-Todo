@@ -5,6 +5,9 @@ import React from 'react';
 
     constructor () {
         super();
+        this.state = {
+            todo_item: ''
+        }
 
     }
 
@@ -16,3 +19,5 @@ import React from 'react';
         )
     }
  }
+
+ export default Todo;
