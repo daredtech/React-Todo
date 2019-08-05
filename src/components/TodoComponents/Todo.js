@@ -1,23 +1,19 @@
 import React from 'react';
-// import { ReactComponent } from '*.svg';
 
- class Todo extends React.Component {
 
-    constructor () {
-        super();
-        this.state = {
-            todo_item: ''
-        }
+const Todo = (props) => {
 
-    }
+    const {id, task, completed} = props;
 
-    render () {
-        return (
-            <>
-            Todo
-            </>
-        )
-    }
- }
+    return(
+        <div className = 'todo-item'
+            id = {id}
+            completed = {completed}
+            onClick = {() => props.toggleItem({id})}
+        >
+            <p> {task}</p>
+        </div>
+    )
+}
 
  export default Todo;
