@@ -22,6 +22,8 @@ import React from 'react';
     submitItem = event => {
         // to prevent the dafault event
         event.preventDefault();
+        // to clear the input after submission
+        event.target.reset();
         //add the item
         this.props.addItem(this.state.item);
         // temp for debugging
@@ -41,7 +43,6 @@ import React from 'react';
             onChange = {this.handleChanges}
             />
            
-            {/* <button onClick={this.submitItem}> Add Todo </button> */}
             <button > Add Todo </button>
             <button onClick={this.props.clearItems}> Clear Components </button>
 
