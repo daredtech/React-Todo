@@ -3,6 +3,7 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import "./styles.css";
 
+
 const todoCollection = [];
 
 class App extends React.Component {
@@ -49,11 +50,15 @@ class App extends React.Component {
     });
   };
 
+  // to clear the list
+  clearItems = (event) =>{
+    event.preventDefault();
 
-
-
-
-
+    this.setState({
+      // todo_collection: todoCollection
+      todo_collection: this.state.todo_collection.filter(item => !item.completed)
+    })
+  }
 
 
   // to display the components
@@ -63,7 +68,7 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
        
         <TodoList todo_collection={this.state.todo_collection} toggleItem={this.toggleItem}/>
-        <TodoForm addItem={this.addItem}/>
+        <TodoForm addItem={this.addItem} clearItems={this.clearItems} todoCollection={todoCollection}/>
 
       </div>
     );

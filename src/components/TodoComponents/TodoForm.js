@@ -43,7 +43,7 @@ import React from 'react';
            
             {/* <button onClick={this.submitItem}> Add Todo </button> */}
             <button > Add Todo </button>
-            {/* <button> Clear Components </button> */}
+            <button onClick={this.props.clearItems}> Clear Components </button>
 
             </form>
 
